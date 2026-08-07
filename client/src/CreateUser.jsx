@@ -19,41 +19,65 @@ function CreateUser() {
   };
 
   return (
-    <div className="d-flex vh-100 bg-primary justify-content-center align-item-center">
-      <div className="w-50 bg-white rounded p-3">
-        <form onSubmit={Submit}>
-          <h2>Add User</h2>
-          <div className="mb-2">
-            <label htmlFor="">Name</label>
-            <input
-              type="text"
-              placeholder="Enter Name"
-              className="form-control"
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
+    <div className="d-flex align-items-center justify-content-center min-vh-100 bg-light py-4">
+      <div className="card w-100" style={{ maxWidth: "480px" }}>
+        <div className="card-header bg-white py-3 px-4 border-bottom">
+          <h2 className="mb-0 h5 fw-bold">Add User</h2>
+        </div>
+        <div className="card-body p-4">
+          <form onSubmit={Submit}>
+            <div className="mb-3">
+              <label htmlFor="name" className="form-label fw-semibold">
+                Name
+              </label>
+              <input
+                id="name"
+                type="text"
+                placeholder="Enter Name"
+                className="form-control"
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
 
-          <div className="mb-2">
-            <label htmlFor="">Email</label>
-            <input
-              type="text"
-              placeholder="Enter Email"
-              className="form-control"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label fw-semibold">
+                Email
+              </label>
+              <input
+                id="email"
+                type="text"
+                placeholder="Enter Email"
+                className="form-control"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
 
-          <div className="mb-2">
-            <label htmlFor="">Age</label>
-            <input
-              type="text"
-              placeholder="Enter Age"
-              className="form-control"
-              onChange={(e) => setAge(e.target.value)}
-            />
-          </div>
-          <button className="btn btn-success">Submit</button>
-        </form>
+            <div className="mb-4">
+              <label htmlFor="age" className="form-label fw-semibold">
+                Age
+              </label>
+              <input
+                id="age"
+                type="text"
+                placeholder="Enter Age"
+                className="form-control"
+                onChange={(e) => setAge(e.target.value)}
+              />
+            </div>
+            <div className="d-flex justify-content-end gap-2">
+              <button
+                type="button"
+                className="btn btn-outline-secondary btn-sm"
+                onClick={() => navigate("/")}
+              >
+                Cancel
+              </button>
+              <button type="submit" className="btn btn-success btn-sm">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
